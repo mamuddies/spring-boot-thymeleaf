@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot Thymeleaf with Metrics Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<link rel="stylesheet" th:href="@{/css/main.css}"
+	href="../../css/main.css" />
+	<style>
+h2 {color:#006400; text-align: center;}
+p {color:blue;}
+dd {background-color: #4CAF50;
+color: white;
+}
+h3{color:white;background-color: black;margin-top: 0%}
+.count, .gauge, .other{border: 3px solid black;
+    width:65%;
+    margin-left: 15%;}
+
+
+</style>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Spring Boot</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+					<li  class="active"><a href="#">Mertics</a></li>
+					<li><a href="#about">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+		<div class="starter-template">
+			<h2>Spring Boot Metrics Example</h2>
+			
+			
+				<tbody>
+				<div class="count">
+				<h3><dl><dt>Counter</dt></dl></h3>
+					<h4><dl><dt>counter.status.200.metrics</dt>
+        			<dd th:text="${metricResponse.counterStatus200Metrics}" /></dl>
+        			<dl><dt>counter.status.200.home</dt>
+        			<dd th:text="${metricResponse.counterStatus200Metricsdata}" /></dl>
+        			<dl><dt>counter.status.404.star-star</dt>
+        			<dd th:text="${metricResponse.counterStatus404StarStar}" /></dl>
+        			<dl><dt>counter.status.200.root</dt>
+        			<dd th:text="${metricResponse.counterStatus200Root}" /></dl>
+        			</h4></div>
+        			<div class="gauge">
+        			<h3><dl><dt>Gauge</dt></dl></h3>
+        			<h4><dl><dt>gauge.response.root</dt>
+        			<dd th:text="${metricResponse.gaugeResponseRoot}" /></dl>
+        			<dl><dt>gauge.response.home</dt>
+        			<dd th:text="${metricResponse.gaugeResponseMetricsdata}" /></dl>
+        			<dl><dt>gauge.response.metrics</dt>
+        			<dd th:text="${metricResponse.gaugeResponseMetrics}" /></dl>
+        			<dl><dt>httpsessions.Max</dt>
+        			<dd th:text="${metricResponse.httpsessionsMax}" /></dl>
+        			</h4></div>
+        			
+        			<div class="other">
+        			<h3><dl><dt>Other</dt></dl></h3>
+					<h4><dl><dt>mem</dt><dd th:text="${metricResponse.mem}" /></dl>
+			   		<dl><dt>mem.free</dt>
+        			<dd th:text="${metricResponse.memFree}"/></dl>
+        			<dl><dt>systemload.average </dt>
+        			<dd th:text="${metricResponse.systemloadAverage}" /></dl>
+        			<dl><dt>heap</dt>
+        			<dd th:text="${metricResponse.heap}" /></dl>
+        			<dl><dt>httpsessions.active </dt>
+        			<dd th:text="${metricResponse.httpsessionsActive}" /></dl>
+        			<dl><dt>heap.used</dt>
+        			<dd th:text="${metricResponse.heapUsed}" /></dl>
+        			<dl><dt>threads</dt>
+        			<dd th:text="${metricResponse.threads}" /></dl>
+        			<dl><dt>threads.total.started</dt>
+        			<dd th:text="${metricResponse.threadsTotalStarted}" /></dl>
+        			</h4></div>
+        			
+				</tbody>
+		</div>
+		
+	<!-- /.container -->
+
+	<script type="text/javascript"
+		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>

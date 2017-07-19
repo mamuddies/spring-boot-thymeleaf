@@ -1,6 +1,6 @@
 package sample.metrics.dropwizard;
 
-public class DateRegixExample {
+public class DateRegexExample {
 
     private static final String DATE_PATTERN = "(0[1-9]|1[012])/((20|21)\\d\\d)";
 

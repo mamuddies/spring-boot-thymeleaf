@@ -1,4 +1,4 @@
-package com.test;
+package sample.metrics.dropwizard;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,36 +10,42 @@ public class TimeCompare {
 
     public static void main(String[] args) throws ParseException {
         // Cache map start
-        String stringDate = "08/2017";
-        List<String> listDate = new ArrayList<String>();
-        listDate.add(stringDate);
-        // Date inputDate = new SimpleDateFormat("MM/yyyy").parse(stringDate);
+        String stringArrayDate[] = {"08", "2018"};
         Map<String, Map<String, Object>> cacheParentMap = new HashMap<String, Map<String, Object>>();
         Map<String, Object> cacheChaildMap = new HashMap<String, Object>();
-        cacheChaildMap.put("disabilly-Date", listDate);
-        cacheParentMap.put("disabilly", cacheChaildMap);
+        cacheChaildMap.put("course.start.details", stringArrayDate);
+        cacheParentMap.put("course-start-date-details", cacheChaildMap);
         // Cache map End
 
         // Your code will start from here
         String StringDate = "08/2018";
         Date d2 = new SimpleDateFormat("MM/yyyy").parse(StringDate);
 
+        StringBuffer strDate = new StringBuffer();
         Map<String, Map<String, Object>> newParentMap = new HashMap<String, Map<String, Object>>(cacheParentMap);
 
-        if (newParentMap.get("disabilly") != null && newParentMap.get("disabilly").get("disabilly-Date") != null) {
-            List<String> dateList = (List<String>) newParentMap.get("disabilly").get("disabilly-Date");
-            System.out.println(dateList.get(0));
-            Date d1 = new SimpleDateFormat("MM/yyyy").parse(dateList.get(0));
-            if (d2.compareTo(d1) <= 0) {
+        if (newParentMap.get("course-start-date-details") != null
+                && newParentMap.get("course-start-date-details").get("course.start.details") != null) {
+            String dateArray[] = (String[]) newParentMap.get("course-start-date-details").get("course.start.details");
+
+            for (int i = 0; i <= dateArray.length - 1; i++) {
+                strDate = strDate.append(dateArray[i]);
+                if (i != dateArray.length - 1) {
+                    strDate.append("/");
+
+                }
+            }
+            Date d1 = new SimpleDateFormat("MM/yyyy").parse(strDate.toString());
+            if (d1.compareTo(d2) >= 0) {
                 System.out.println("Course start aug 18 or later");
+                return;// It will come out from this method
             } else {
-                System.out.println("Continue... Your logic here"); // write your remaining logic here }
+                // write your remaining logic here
+                System.out.println("Continue... Your logic here");
 
             }
 
         }
     }
-
-
 
 }

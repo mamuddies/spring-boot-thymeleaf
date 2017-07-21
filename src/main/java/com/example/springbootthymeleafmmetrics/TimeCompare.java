@@ -2,12 +2,12 @@
             String[] answer=null;
             int month,year=0;
             Map<String,Object> isAnswaredPreviousQuestion=null;
-            Map<String,Map<String,Object>> applicationAnswar=null;
-            if(null!=this.applicationAnswar.getAnswers()){
-                applicationAnswar=this.applicationAnswar.getAnswers();
-                isAnswaredPreviousQuestion =applicationAnswar.get("course-start-date-details");
+            Map<String,Map<String,Object>> applicationAnswer=null;
+            if(null!=this.applicationAnswer.getAnswers()){
+                applicationAnswer=this.applicationAnswer.getAnswers();
+                isAnswaredPreviousQuestion =applicationAnswer.get("course-start-date-details");
                 if(null!=isAnswaredPreviousQuestion){
-                    answer=(String[])isAnswaredPreviousQuestion.get("coursr.start.details");
+                    answer=(String[])isAnswaredPreviousQuestion.get("course.start.details");
                     if(null!=answer){
                         month=Integer.parseInt(answer[0]);
                         year=Integer.parseInt(answer[1]);

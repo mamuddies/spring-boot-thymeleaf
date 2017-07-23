@@ -14,18 +14,17 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class JunitTestCase {
 	private ApplicationAnsweres applicationAnswers;
 
-	// below one is you code change class modify this class name
+	// Instead of PageDetails give your class name in all palces
 	private PageDetails pageDetails;
 
 	@Before
 	public void setUp() {
-		// below one is you code change class modify this class name and create
-		// object
+		// Instead of PageDetails give your class name in all palces
 		pageDetails = new PageDetails();
 
 		applicationAnswers = new ApplicationAnsweres();
 		applicationAnswers.setAnsweres(getRequest());
-
+		// Instead of PageDetails give your class name in all palces
 		Whitebox.setInternalState(pageDetails, "applicationAnswers", applicationAnswers);
 
 	}

@@ -33,7 +33,7 @@ public class JunitTestCase {
 	public void testMethod() {
 
 		// Mockito.when(applicationAnswers.getAnsweres()).thenReturn(getRequest());
-
+// Instead of PageDetails give your class name in all palces
 		pageDetails.myPageDetails();
 
 	}

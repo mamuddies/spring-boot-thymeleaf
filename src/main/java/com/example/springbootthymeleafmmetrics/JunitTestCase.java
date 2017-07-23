@@ -49,7 +49,7 @@ public class JunitTestCase {
 		aplicationAnswers.put("course-start-details-more", coureseStartDetailssMore);
 		coureseStartDateDetails.put("course-start-details", startDateDetails);
 		aplicationAnswers.put("course-start-date-details", coureseStartDateDetails);
-		aplicationAnswers.put("course-started-date-details", coureseStartDateDetails);
+		//aplicationAnswers.put("course-started-date-details", coureseStartDateDetails);
 		return aplicationAnswers;
 
 	}

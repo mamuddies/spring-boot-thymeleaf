@@ -1,13 +1,4 @@
-package com.capitalone.digitalmessagingsystem.batch.batchdsvalidator.test;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-public class TimeCompare {
-    .isVisible(()->{
+.isVisible(()->{
     String answer[] = new String[2];
     String kiAnswer[]=new String[2];
     Date courseStartDate = null;
@@ -45,4 +36,4 @@ public class TimeCompare {
             logger.error("Exception occured while getting course start details information" + e);
         }
     }
-}).doneCondition().build();}
+}).doneCondition().build();
